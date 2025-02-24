@@ -1,0 +1,29 @@
+.navbar {
+    background-color: #9cb085;
+    color: black;
+}
+
+#img-nav {
+    color: #9cb085;
+}
+
+#Bioms-nav a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+#menu-btn {
+    background-color: #9cb085;
+}
+
+#menu-btn:hover {
+    background-color: rgb(71, 82, 16);
+}
+
+#menu-btn:focus {
+    background-color: rgb(71, 82, 16);
+}
+
+#dropdown-menu {
+    background-color: rgb(71, 82, 16);
+}

@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Biomas {
+  bioma_id   Int       @id @default(autoincrement())
+  nome       String    @db.VarChar(45)
+  definicao  String    @db.Text
+  localizacao String   @db.Text
+  criado_em  DateTime  @default(now())
+  posts      Posts[]
+}
+
+model Usuarios {
+  usuario_id    Int        @id @default(autoincrement())
+  adm           Boolean    @default(false)
+  nome          String     @db.VarChar(100)
+  email         String     @unique @db.VarChar(255)
+  senha_hash    String     @db.Text
+  criado_em     DateTime   @default(now())
+  posts         Posts[]
+  comentarios   Comentarios[]
+}
+
+model Posts {
+  post_id      Int        @id @default(autoincrement())
+  titulo       String     @db.VarChar(50)
+  conteudo     String     @db.Text
+  bioma_id     Int?
+  usuario_id   Int
+  criado_em    DateTime   @default(now())
+  bioma        Biomas?    @relation(fields: [bioma_id], references: [bioma_id])
+  usuario      Usuarios   @relation(fields: [usuario_id], references: [usuario_id])
+  comentarios  Comentarios[]
+}
+
+model Comentarios {
+  comentario_id      Int        @id @default(autoincrement())
+  titulo             String     @db.VarChar(50)
+  conteudo           String     @db.Text
+  usuario_id         Int
+  comentario_pai_id  Int?
+  post_id            Int
+  criado_em          DateTime   @default(now())
+  usuario            Usuarios   @relation(fields: [usuario_id], references: [usuario_id])
+  comentario_pai     Comentarios? @relation("ComentarioPai", fields: [comentario_pai_id], references: [comentario_id])
+  comentarios_filho  Comentarios[] @relation("ComentarioPai")
+  post               Posts      @relation(fields: [post_id], references: [post_id])
+}

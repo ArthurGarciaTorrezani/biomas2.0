@@ -1,0 +1,29 @@
+.navbar {
+    background-color: #d9ad7c;
+    color: #4f2c1d;
+}
+
+#img-nav {
+    color: #d9ad7c;
+}
+
+#Bioms-nav a {
+    text-decoration: none !important;
+    color: #4f2c1d !important;
+}
+
+#menu-btn {
+    background-color: #d9ad7c;
+}
+
+#menu-btn:hover {
+    background-color: #a37035;
+}
+
+#menu-btn:focus {
+    background-color: #a37035;
+}
+
+#dropdown-menu {
+    background-color: #a37035;
+}

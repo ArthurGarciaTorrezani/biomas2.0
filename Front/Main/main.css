@@ -1,0 +1,33 @@
+.navbar {
+    background-color: lightseagreen;
+    color: white;
+}
+
+#img-nav {
+    color: lightseagreen;
+}
+
+#Bioms-nav a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
+#menu-btn {
+    background-color: lightseagreen;
+}
+
+#menu-btn:hover {
+    background-color: rgb(58, 127, 132);
+}
+
+#menu-btn:focus {
+    background-color: rgb(58, 127, 132);
+}
+
+#dropdown-menu {
+    background-color: rgb(72, 75, 175);
+}
+
+.hidden {
+    display: none;
+}
