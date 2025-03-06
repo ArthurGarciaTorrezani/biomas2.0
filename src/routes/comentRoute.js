@@ -20,4 +20,4 @@ comentRoutes.put("/comentupdate",comentController.comentUpdate)
 // DELETE
 comentRoutes.delete("/comentdelete",comentController.comentDelete)
 
-export default comentRoutes;
+export default comentRoutes; 

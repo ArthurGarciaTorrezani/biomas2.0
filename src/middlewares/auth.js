@@ -1,5 +1,5 @@
 function authenticateSession(req, res, next) {
-  console.log(req.session.user)
+  console.log(req.session)
   // Verifica se há uma sessão ativa com dados do usuário
   if (req.session && req.session.user) {
     // Se o usuário estiver autenticado, continua para a próxima função
